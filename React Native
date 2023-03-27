@@ -1,0 +1,50 @@
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, ScrollView, View } from 'react-native';
+
+export default function App() {
+  const [text, setText] = useState('');
+
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.title}>Atividade Laboratório de Dispositivos Móveis</Text>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={setText}
+          value={text}
+          placeholder="Digite seu texto aqui"
+          multiline
+        />
+      </ScrollView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  scrollView: {
+    backgroundColor: '#eee',
+    width: '100%',
+    padding: 20,
+    borderRadius: 5,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  textInput: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    padding: 10,
+    height: 200,
+    textAlignVertical: 'top',
+  },
+});
